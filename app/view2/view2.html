@@ -1,5 +1,29 @@
-<p>This is the partial for {{repoId}}.</p>
-{{repoInfo.name}}<br/>
-<a ng-href="{{repoInfo.html_url}}">{{repoInfo.html_url}}</a>
-<hr/>
-{{repoInfo}}
+<a ng-href="#/" style="text-decoration: none"><i class="fa fa-angle-left fa-3x"></i> <span style="font-size:16pt">Back</span></a>
+<md-card>
+  <md-card-title>
+  <md-card-title-text>
+    <h1><i class="fa fa-github fa-3x" style="float: left; padding-left: 14px; padding-right: 14px"></i>{{repoInfo.name}}</h1>
+    <h2>{{repoInfo.description}}</h2>
+    <div style="clear:both"></div>
+    <div>
+      <md-list>
+        <md-list-item class="md-3-line">
+          <div class="md-list-item-text" layout="column">
+            <h3>Main language</h3>
+            <h4>{{repoInfo.language}}</h4>
+          </div>
+        </md-list-item>
+        <md-list-item class="md-3-line">
+          <div class="md-list-item-text" layout="column">
+            <h3>Details</h3>
+            <h4><i class="fa fa-code-fork"></i>{{repoInfo.forks}} <i class="fa fa-eye" style="margin-left: 16px"></i>{{repoInfo.watchers}}</h4>
+          </div>
+        </md-list-item>
+      </md-list>
+    </div>
+  </md-card-title-text>
+  </md-card-title>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button class="md-primary" ng-href="{{repoInfo.html_url}}">See on github</md-button>
+  </md-card-actions>
+</md-card>

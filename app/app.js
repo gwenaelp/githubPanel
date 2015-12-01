@@ -6,16 +6,18 @@ var myApp = angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.version',
-  'pascalprecht.github-adapter'
+  'pascalprecht.github-adapter',
+  'ngMaterial',
+  'ngAria'
 ]).
 config(['$routeProvider', '$githubProvider', function($routeProvider, $githubProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
-  $githubProvider.username('gwenaelp');
-  $githubProvider.password('*****');
+  $githubProvider.username(username);
+  $githubProvider.password(password);
   $githubProvider.authType('basic');
 }]);
 
-myApp.controller('MainController', ['$scope', '$github', 'githubService', function($scope, $github, githubService) {
+myApp.controller('MainController', ['$scope', '$location', '$github', 'githubService', function($scope, $location, $github, githubService) {
   window.$G = $github;
   githubService.getUserInfo(function(userInfo) {
     $scope.userInfo = userInfo;
@@ -23,6 +25,10 @@ myApp.controller('MainController', ['$scope', '$github', 'githubService', functi
   githubService.getRepos(function(repos) {
     $scope.repos = repos;
   });
+
+  $scope.go = function ( path ) {
+    $location.path( path );
+  };
 }]);
 
 myApp.controller('RepoController', ['$scope', '$route', '$github', 'githubService', function($scope, $route, $github, githubService) {
