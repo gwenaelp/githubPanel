@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+angular.module('myApp.repoView', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/repo/:repoId', {
-    templateUrl: 'view2/view2.html',
+    templateUrl: 'repoView/repoView.html',
     controller: 'RepoController'
   });
 }])

@@ -3,15 +3,14 @@
 // Declare app level module which depends on views, and components
 var myApp = angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version',
+  'myApp.mainView',
+  'myApp.repoView',
   'pascalprecht.github-adapter',
   'ngMaterial',
   'ngAria'
 ]).
 config(['$routeProvider', '$githubProvider', function($routeProvider, $githubProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/mainView'});
   $githubProvider.username(username);
   $githubProvider.password(password);
   $githubProvider.authType('basic');

@@ -1,12 +1,12 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
+  "name": "githubpanel",
+  "description": "A github panel",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/gwenaelp/githubpanel",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "~1.4.0",
+    "angular": "~1.4.8",
     "angular-route": "~1.4.0",
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
